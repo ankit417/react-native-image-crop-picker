@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.yalantis.ucrop.sample"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 13
+        versionName "1.2.4"
+    }
+    flavorDimensions "default"
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        abortOnError false
+    }
+    productFlavors {
+        activity {
+            buildConfigField("int","RequestMode", "1")
+        }
+        fragment {
+            buildConfigField("int","RequestMode", "2")
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:${androidx_appcompat_version}"
+    implementation "androidx.core:core:${androidx_core_version}"
+    implementation "androidx.constraintlayout:constraintlayout:${constraintlayout_version}"
+    implementation project(':ucrop')
+}
