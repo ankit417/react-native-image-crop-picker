@@ -22,7 +22,7 @@
         </provider>
 
         <activity
-            android:name="com.github.ankit417.ucrop.UCropActivity"
+            android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
